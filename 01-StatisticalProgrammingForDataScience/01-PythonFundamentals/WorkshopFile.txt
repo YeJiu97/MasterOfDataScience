@@ -1,0 +1,884 @@
+'''
+File: PythonForDataAnalysis_part1.py
+Author: Tim Bogomolov
+Email: timofei.bogomolov@unisa.edu.au
+Version: 1.0 01 
+Description: Python Fundamentals
+'''
+
+
+import this
+
+# Displays the message Hello World
+
+print('Hello World')
+
+# Variables
+# num variable references the value 3
+
+num1 = 3
+num2 = num1 
+num1 = 7
+
+
+# Variables and Constants
+
+var = 1
+CONST = 3.14159
+
+long_name_variable = 1
+anotherLongName = 2             # camelCase
+
+
+# Python keywords
+
+import keyword
+print(keyword.kwlist)
+
+
+###########################################################
+# Data types
+# Number, String, List, Tuple, Dictionary
+
+my_number = 1
+my_string = "string"
+my_list = [1,2,"three"]
+my_tuple = (1,2,"three")
+my_dictionary = {'a':1,'b':"test", 'c':my_list}
+
+
+
+###########################################################
+# Number
+
+# Integer
+a = 1
+
+import sys
+sys.maxsize
+
+
+# Float
+b = 3.5
+c = -21.9
+e = 3.3E+10
+
+# Boolean
+f = True
+g = False
+
+print(f)
+print(int(f))
+
+print(f + f)
+
+
+
+###########################################################
+# Operators +, -, *, /, %, **, //
+# Assignment statement =
+
+num = 1 + 2
+
+# Note the use of the semicolon ;
+num1 = 3; num2 = 5; total = num1 + num2
+
+# Using a variable as an operand
+num = 6
+num = num + 1
+
+# Same as above but using the += operator
+num = 6
+num += 1
+
+# Order of Operations: BODMAS
+# (1) Brackets, (2) Orders, (3) Division, Multiplication, (4) Addition, Substraction
+
+5 * (2 + 2)                  # = 
+5 * 2 + 2                    # = 
+4 * 2 / 2 * 4                # = 
+4 * 2 / (2 * 4)              # = 
+
+
+6.4 // 2                # =
+6.8 // 2                # =
+-6.4 // 2               # =
+-6.8 // 2               # =
+
+3 ** 2
+
+4 % 2
+5 % 2
+
+
+###########################################################
+# Comparasion operators ==, !=, <>, >, <, <=, >=
+
+4 == 5
+4 != 5
+# 4 <> 5
+4 > 4
+4 >= 4
+4 < 5
+4 <= 5
+
+
+###########################################################
+# Boolean operators and, or, not
+
+x = 4
+x >= 0 and x <= 5
+x <= 0 or x >= 4
+not x >= 0 and x <= 5
+
+
+True and True
+True and False
+False and False
+False and True
+
+True or True
+True or False
+False or False
+False or True
+
+not True
+not False
+
+
+###########################################################
+# Built-in functions
+
+dir(__builtins__)
+
+# output = name(input argument)
+# b = abs(x)
+
+result = pow(2,3)
+print(result)
+
+abs(-3)
+round(1.2345, 2)
+
+int("12")
+float("3.14")
+
+str(365)
+
+guess = input('Please enter your guess: ')
+guess
+
+print("Your guess is", guess)
+print("Your guess is", guess, ".")
+print("Your guess is ", guess, ".", sep="")
+
+range(10)
+range(1,10,2)
+
+
+###########################################################
+# Statement import
+
+import math
+
+math.ceil(20.6)
+math.floor(20.6)
+math.sqrt(64)
+math.pi
+math.degrees(math.pi)
+
+import random as rd
+rd.random()
+rd.uniform(0,1)
+rd.gauss(0,1)
+
+x = [1,2,3,4,5,6,7,8,9]
+rd.shuffle(x)
+
+
+# built-in modules
+import sys
+sys.builtin_module_names
+
+# all modules
+help('modules') 
+
+
+###########################################################
+# Methods
+
+my_number = 1
+my_string = "string"
+my_list = [1,2,"three"]
+my_tuple = (1,2,"three")
+my_dictionary = {'a':1,'b':"test", 'c':my_list}
+
+dir(my_number)
+
+dir(my_string)
+my_string.upper()
+
+
+###########################################################
+# Control Structures
+
+###########################################################
+# Selection if, if-else, if-elif-else
+
+age = 13
+if age >= 18:
+    pass
+else:
+    print('You can NOT vote!')
+
+if age < 18:
+    print('You can NOT vote!')
+
+print('You can vote!')
+
+
+
+mark = 65
+if mark >= 50:
+    print('You passed!')
+else:
+    print('You failed!')
+
+
+if mark >= 85:
+    print('HD')
+elif mark >= 75:
+    print('D')
+elif mark >= 65:
+    print('C')
+elif mark >= 55:
+    print('P1')
+elif mark >= 50:
+    print('P2')
+elif mark >= 40:
+    print('F1')
+else:
+    print('F2')
+
+# Combining selection
+
+temperature = 25
+if temperature > 0 and temperature < 40:
+    print('Normal temperature')
+else:
+    print('Extreme temperature!')
+
+if temperature < 0 or temperature > 40:
+    print('Extreme Weather Conditions!')
+
+
+# Ternary Expressions
+# value = true-expression if condition else false-expression
+
+mark = 84
+print('HD') if (mark >= 85) else print('Other Grade')
+
+grade = 'HD' if mark >= 85 else 'Other Grade'
+print(grade)
+
+###########################################################
+# Repetition structures: for, while
+
+
+
+
+a = 15
+while a > 10:
+    a = a - 1
+    if a == 12:
+        continue
+    print(a) 
+else:
+    print('Done!')
+
+
+a = 0
+while a < 3:
+    print('Going loopy', a)
+    a += 1
+print('Done!')
+
+
+fruits = ['banana', 'apple', 'mango']
+for i in range(3):
+    print('The current fruit is %s ' % fruits[i])
+    if fruits[i] == "apple":
+        break
+    
+    
+    
+    
+print('The fruit bowl is empty!')
+
+
+fruits = ['banana', 'apple', 'mango']
+for i in fruits:
+    print(i)
+else:
+    print('The fruit bowl is empty!')
+
+
+
+###########################################################
+# Repetition structures: Break, Continue, Pass
+
+i= 1
+
+
+fruits = ['banana', 'apple', 'mango']
+for i in fruits:
+    print(i)
+    
+    
+    
+    if i == "apple":
+        print("Potato should not be in the fruit bowl")
+        break
+
+x = 0
+while True:
+    while True:
+        x += 1
+        print(x)
+        if x >= 10:
+            break
+        print("===")
+
+
+for i in [1, "r", 2.3]:
+    print(i)
+
+
+for x in range(10):
+    if (x == 3 or x == 4):
+        pass
+    else:
+        print(x)
+
+
+for x in range(10):
+    # to do later
+    pass
+
+print(x)
+ 
+
+
+###########################################################
+# String  - Lecture 2
+
+a = 'Hello " World!'
+print(a)
+a
+
+a = "It's a wonderful world!"
+print(a)
+
+string_in_string = ''' Tim says: "Yes, you can do this - there is no couldn't shouldn't wouldn't." '''
+print(string_in_string)
+
+
+# Escape characters
+print("I can print a backslash like this \\")
+print("I can also split the line here\nand then print \\n")
+print("I'd like some more space\tthank you. I did that using \\t")
+
+
+# String formatting, placeholders
+a = 3; b = 4; name = "Tim"
+print("My name is %s and if I add %d to %d I get %d." % (name,a,b,a+b))
+
+print("Alternatively, if I add %f to %e I get %G." % (a,b,a+b))
+
+
+# Slicing
+a = 'Hello World!'
+a[2]                # string[start]
+a[0:7]              # string[start:end]
+a[0:10:2]           # string[start:end:step]
+
+a[-1]
+a[::-1]
+a[::2]
+
+
+# Strings are immutable
+a[0]
+a[0] = 'G'
+
+
+# Operator in
+
+a = 'Hello World!'
+a = a.upper()
+
+print(a)
+'H' in a
+
+
+a = 'Hello World!'
+for i in range(5):
+    print(a[i])
+    
+for i in range(5):
+    print(a[i])   
+    
+    
+    
+    if i in 'aeiouy':
+        print(i, "- It's a vowel!")
+
+
+# Concatenation and repetition
+
+str1 = 'hi '
+str2 = 'there...'
+str1 + str2
+
+str1 * 3
+
+# Some built-in functions
+
+str1 = "aA"
+len(str1)
+max(str1)
+min(str1)
+
+
+
+# String methods
+a = 'Hello World!'
+
+dir(a)
+
+a.lower()                  # string.lower()
+a.upper()                  # string.upper()
+a.find("o", 8)                # string.find(t, start, end)
+a.split("o")               # string.split(sep, maxsplit)
+
+
+
+###########################################################
+# Tuple - immutable
+
+easy_tuple = 4,5
+easy_tuple
+
+nested_tup = (4,5,6),(7,8)
+print(nested_tup)
+
+tup = tuple(['string'])    # by command
+tup
+
+# Concatenation and repetition
+(4, None, 'foo') + (6, 0) + ('bar',)
+
+('foo', 'bar') * 4
+
+
+# Slicing
+tup = tuple(['foo', [1, 2], True])
+len(tup)
+
+tup[0]
+tup[2]
+tup[2] = False
+
+tup[1]
+tup[1].append(3)
+tup
+
+# Tuple methods
+dir(tup)
+tup = (1, 2, 2, 2, 3, 4, 2)
+tup.count(2)
+
+
+# Unpacking tuples
+tup = (4, 5, 6)
+a, b, c = tup
+print(b)
+
+tup = (4, 5, (6, 7))   # nested structure
+a, b, (c, d) = tup
+print(d)
+
+a, b, c = tup
+print(c)
+
+
+
+
+###########################################################
+# List
+
+my_list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+
+my_list[0]
+my_list[-1]
+my_list[1:3]
+my_list[2:]
+my_list[1:5:2]
+my_list[::2]
+my_list + my_list * 4
+
+# Lists are mutable
+my_list[1] = ['a', 99]
+my_list
+
+# Membership
+my_list = ['one', 'two', 'three']
+'one' in my_list
+'one' not in my_list
+
+# Methods to modify list
+my_list = [ 'abcd', 786 , 2.23, 'john', 70.2 ]
+dir(my_list)
+
+len(my_list) 
+
+my_list.append(99)
+len(my_list)
+print(my_list)
+
+my_list.append(['a', 'b', 'c'])
+len(my_list)
+print(my_list)
+
+my_list.extend(['a', 'b', 'c'])
+len(my_list)
+print(my_list)
+
+my_list.insert(1, 'one more') 
+print(my_list)
+
+my_list.remove('abcd')  # value-specific element removal
+print(my_list)
+
+del my_list   # index-specific element removal # del(my_list[0])
+print(my_list)
+
+my_list[0:2] = []
+
+my_list.clear()  
+print(my_list)
+
+my_list = [1, 2, 3, 4, 5, 6]
+my_list.reverse()
+
+my_list = [2, 1, 6, 3, 5, 4]
+my_list.sort()
+my_list.sort(reverse = True)
+
+
+
+# Non-modifying List methods
+my_list = [2, 1, 6, 3, 5, 4, 9, 12, 2]
+
+my_list.index(12)
+
+len(my_list)
+max(my_list)
+min(my_list)
+
+
+# One more example
+myString = "Hello World!"
+revString = myString.split()
+revString.reverse()
+revString = ' = '.join(revString)
+
+
+# Enumerate
+my_list = [2, 1, 6, 3, 5, 4, 9, 12, 2]
+i = 0
+for value in my_list:
+    print(i)
+    i += 1
+    
+my_list = [2, 1, 6, 3, 5, 4, 9, 12, 2]
+for i, value in enumerate(my_list):
+    print(i)
+
+# zip
+
+seq1 = ['foo', 'bar', 'baz']
+seq2 = ['one', 'two', 'three']
+zipped = zip(seq1, seq2)
+print(zipped)
+list(zipped)
+
+for i,(a, b) in enumerate(zip(seq1, seq2)):
+    print('%d: %s, %s' % (i, a, b))
+
+
+actors = [('Leo', 'DiCaprio'), ('George', 'Clooney'), ('Daniel','Craig')]
+first_names, last_names = zip(*actors)
+first_names
+last_names
+
+
+
+###########################################################
+# Dictionary. Format key:value
+
+my_dict = {'name':'john','code':6734,'dept':'sales'}
+my_dict
+my_dict.keys()
+my_dict.values()
+
+
+my_dict = {'a':'tim', 'b':[1,2,3,4]}
+my_dict['a']
+my_dict[1] = 'lucky number'
+my_dict
+
+my_dict = {}
+my_dict[33] = "test"
+
+my_dict = dict(zip([1,2,3], [(1,2), "test", 999]))
+my_dict
+
+
+words = ['clock', 'apple', 'bat', 'bar', 'atom', 'book']
+by_letter = {}
+for word in words:
+    letter = word[0]
+    if letter not in by_letter:
+        by_letter[letter] = [word]
+    else:
+        by_letter[letter].append(word)
+by_letter
+
+
+
+# Methods
+dir(my_dict)
+
+my_dict = {'name':'john','code':6734,'dept':'sales'}
+my_dict.pop("name")
+my_dict
+
+
+
+###########################################################
+# Set. collection of unique elements
+
+set([2, 2, 2, 1, 3, 3])
+
+{2, 2, 2, 1, 3, 3}
+
+# Set supports mathematical functions
+
+a = {1, 2, 3, 4, 5}
+b = {3, 4, 5, 6, 7, 8}
+
+a | b # union (or)
+a & b # intersection (and)
+a - b # difference
+a ^ b # symmetric difference 
+
+
+# Set methods
+a = {1, 2, 3, 4, 5}
+b = {3, 4, 5, 6, 7, 8}
+dir(a)
+
+a.union(b)
+a.intersection(b)
+a.difference(b)
+a.symmetric_difference(b)
+
+
+
+###########################################################
+###########################################################
+# Mutable - immutable
+
+
+a = [1,2,3]
+b = a
+a
+b
+
+a[0] = "a"
+a
+b
+
+a = [1,2,3]
+b = a.copy()
+a
+b
+
+a[0] = "a"
+a
+b
+
+
+a = [1,2,3]
+b = ['a', 'b', 'c']
+
+a.append(b)
+a
+b
+
+del b[0]
+b
+a
+
+c = a.copy()
+c
+
+a[0] = 99
+a
+c
+
+b[0] = 'z'
+b
+a
+c
+
+import copy
+c = copy.deepcopy(a)
+b[0] = 'x'
+b
+a
+c
+
+
+###########################################################
+###########################################################
+# Functions - Lecture 3
+
+def testFunction(x):
+    print(x)
+    
+testFunction(99)                   # function name(parameter/s)
+testFunction('test')
+
+
+def addFunction(x, y):
+    z = x + y                      # z is local scope variable/namespace
+    return(z)                      # z exists only within the function
+
+addFunction(2, 4)
+
+
+z = 2
+def testFunction():
+    global z
+    z = z * 2                      # z is global scope variable/namespace
+ 
+    
+testFunction()
+print(z)
+
+
+
+# return more than one value
+def example_function():
+    return (1, 2, 3)
+    
+temp = example_function()
+temp
+a,b,c = example_function()
+print('a =' , a, 'b =', b, 'c =', c)
+
+
+def example_function():
+    return {'a' : 5, 'b' : 6, 'c' : 7}
+
+dt = example_function()
+dt['a']
+    
+    
+    
+###########################################################
+# Lambda function (or anonymous function) 
+    
+def by_2(x):
+    return x * 2
+    
+by_2(3)    
+    
+    
+by_2 = lambda x: x * 2
+    
+by_2(3)
+    
+    
+def apply_to_list(some_list, f):
+    return [f(x) for x in some_list] 
+    
+my_list = [4, 0, 1, 5, 6]
+apply_to_list(my_list, lambda x: x * 2)
+    
+    
+# Currying
+    
+def add_numbers(a, b):
+    return a + b
+    
+def add_five(a):
+    return add_numbers(5,a)
+    
+add_five(2)   
+    
+
+###########################################################
+# More on functions: parameter (variable) VS argument (value) 
+    
+def example_function(number):
+    result = number * 2
+    print(result)
+    
+value = 3
+example_function(value)    
+    
+    
+def example_function(num1, num2):
+    result = num1 ** num2
+    return(result)  
+    
+example_function(2, 5) 
+example_function(5, 2) 
+
+example_function(num1=2, num2=5)  
+example_function(num2=5, num1=2)    
+
+def example_function(num1, num2, num3=10):
+    result = num1 ** num2 * num3
+    return(result)  
+    
+example_function(2, 5)
+example_function(2, 5, 10)    
+    
+# changing parameter
+def change_me(number):
+    print('Attempting to change the value!')
+    number = 0
+    print('Now the value is:', number)
+    
+value = 10
+print('The value is:', value)
+
+change_me(value)
+print('After the function call the value is:', value)
+  
+  
+# changing parameter again
+  
+def change_me(aList, aNum):
+    aList.append(aNum)
+    aNum += 1
+    
+myList = [1,2,3]
+myNum = 99
+
+change_me(myList, myNum)
+print(myList, myNum)
