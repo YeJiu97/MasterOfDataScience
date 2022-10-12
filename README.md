@@ -10,4 +10,4 @@
 
 统计学：[数据科学的统计学](https://github.com/YeJiu97/MasterOfDataScience)
 1. [数据介绍](https://github.com/YeJiu97/MasterOfDataScience/tree/main/01-StatisticsForDataScience/01-IntroductionToData)
-2. [描述性统计](https://github.com/YeJiu97/MasterOfDataScience/tree/main/01-StatisticsForDataScience/02-Descriptive%20statistics)
+2. [描述性统计](https://github.com/YeJiu97/MasterOfDataScience/tree/main/01-StatisticsForDataScience/02-DescriptiveStatistics/Week_02_Note)
