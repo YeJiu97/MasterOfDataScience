@@ -1,0 +1,10 @@
+FIELDS,DESCRIPTION
+Type,:  Type of transaction made
+Customer Country,:  Country where the customer made the purchase
+Customer Fname,:  Customer name
+Customer Id,:  Customer ID
+Customer Segment,":  Types of Customers: Consumer , Corporate , Home Office"
+Order Item Product Price     ,:  Price of products without discount
+Order Item Quantity,:  Number of products per order
+Order Item Total  ,:  Total amount per order (incl. discount)
+Product Name,:  Product Name
